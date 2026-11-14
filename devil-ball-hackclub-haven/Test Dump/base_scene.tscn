@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bmk4cssn4j87d" path="res://Objects/Player/player.tscn" id="1_36rt7"]
 [ext_resource type="PackedScene" uid="uid://btfa7bwad2bnp" path="res://Test Dump/test_ball.tscn" id="2_mg2k8"]
+[ext_resource type="PackedScene" uid="uid://dnuy8fwdbv1oy" path="res://Models/Neighbor.fbx" id="3_x4ym1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_36rt7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -39,3 +40,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1306024, -1.1920929e-07, -
 
 [node name="TestBall" parent="." unique_id=312142065 instance=ExtResource("2_mg2k8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.820137, -0.8271172, -0.19320536)
+
+[node name="Neighbor" parent="." unique_id=924010544 instance=ExtResource("3_x4ym1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6034813, -1.3271146, -8.1756)
