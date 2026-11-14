@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btfa7bwad2bnp"]
+
+[ext_resource type="Script" uid="uid://dyn63rmn0efm1" path="res://Test Dump/test_ball.gd" id="1_80swg"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80swg"]
+bounce = 0.49
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s5rq6"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_lxh4r"]
+material = SubResource("StandardMaterial3D_s5rq6")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xdrwm"]
+
+[node name="TestBall" type="RigidBody3D" unique_id=312142065]
+physics_material_override = SubResource("PhysicsMaterial_80swg")
+center_of_mass_mode = 1
+script = ExtResource("1_80swg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=851565538]
+mesh = SubResource("SphereMesh_lxh4r")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=278712089]
+shape = SubResource("SphereShape3D_xdrwm")

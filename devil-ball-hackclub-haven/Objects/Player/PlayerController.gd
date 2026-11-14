@@ -4,11 +4,19 @@ extends CharacterBody3D
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+@export var Pusher : GamePusher
+
 var CoyoteTime = 0.0
 var JumpBuffer = 0.0
+var PushDelay = 0.0
 
-
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void: 
+	
+	PushDelay -= delta
+	
+	if Input.is_action_just_pressed("PlayerClick") and PushDelay < 0.05:
+		PushDelay = 0.5
+		Pusher.Trigger()
 	
 	CoyoteTime -= delta
 	JumpBuffer -= delta

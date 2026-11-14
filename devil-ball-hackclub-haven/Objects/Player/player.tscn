@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://df413gho3k842" path="res://Objects/Player/camera.gd" id="1_156m4"]
 [ext_resource type="Script" uid="uid://2eamdd6mlclp" path="res://Objects/Player/PlayerController.gd" id="1_yw17q"]
+[ext_resource type="PackedScene" uid="uid://mb4qhfti3lx6" path="res://Objects/Player/pushinator.tscn" id="3_l2ya6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxh4r"]
 radius = 0.3701172
@@ -10,8 +11,9 @@ radius = 0.3701172
 
 [node name="Player" type="Node3D" unique_id=1311379251]
 
-[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=386292148]
+[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=386292148 node_paths=PackedStringArray("Pusher")]
 script = ExtResource("1_yw17q")
+Pusher = NodePath("Camera/Pushinator")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody" unique_id=990403426]
 shape = SubResource("CapsuleShape3D_lxh4r")
@@ -24,3 +26,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47108877, 0)
 script = ExtResource("1_156m4")
 XPivot = NodePath("..")
 YPivot = NodePath(".")
+
+[node name="Pushinator" parent="PlayerBody/Camera" unique_id=1541510130 instance=ExtResource("3_l2ya6")]
