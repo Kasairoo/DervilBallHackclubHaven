@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b5p3c85lox11t"
-path="res://.godot/imported/Neighbors House.fbx-58db4d31dac4fb4d89504039e27b9226.scn"
+path="res://.godot/imported/Neighbors House.fbx-e372e58e8069fa0b5f9b79ca699f833e.scn"
 
 [deps]
 
-source_file="res://Models/Neighbors House.fbx"
-dest_files=["res://.godot/imported/Neighbors House.fbx-58db4d31dac4fb4d89504039e27b9226.scn"]
+source_file="res://Models/Neighbors House/Neighbors House.fbx"
+dest_files=["res://.godot/imported/Neighbors House.fbx-e372e58e8069fa0b5f9b79ca699f833e.scn"]
 
 [params]
 
@@ -39,7 +39,25 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"House": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Models/Neighbors House/house.tres",
+"use_external/path": "uid://bi3shkgvukomf"
+},
+"Roof Inner": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Models/Neighbors House/inner_roof.tres",
+"use_external/path": "uid://wgicr623alhe"
+},
+"Roof Outer": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Models/Neighbors House/outer_roof.tres",
+"use_external/path": "uid://dsxnxfeyoixv8"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

@@ -21,6 +21,7 @@ Camera = NodePath("CameraHolder/Camera")
 shape = SubResource("CapsuleShape3D_lxh4r")
 
 [node name="PlayerVisual" type="MeshInstance3D" parent="PlayerBody" unique_id=1616479496]
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_lxh4r")
 
 [node name="CameraHolder" type="Node3D" parent="PlayerBody" unique_id=1481089546]
