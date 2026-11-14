@@ -24,12 +24,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	CameraHolder.position.y = sin(WalkTimer * 10) * 0.05
-	Camera.rotation_degrees.z = lerp(Camera.rotation_degrees.z, ( sin(WalkTimer * 5) * 1 ) + ( Input.get_axis("PlayerRight", "PlayerLeft") * 3 ), 0.2 )
+	Camera.rotation_degrees.z = lerp(Camera.rotation_degrees.z, ( sin(WalkTimer * 5) * 1 ) + ( Input.get_axis("PlayerRight", "PlayerLeft") * 3 ), delta * 10 )
 	
 	
 	
 	FovBoost *= 0.96
-	Camera.fov = 90 + FovBoost + (velocity.length() * 0.5)
+	Camera.fov = lerp(Camera.fov, 90 + FovBoost + (velocity.length() * 0.5), delta * 15)
 
 func _physics_process(delta: float) -> void: 
 	
