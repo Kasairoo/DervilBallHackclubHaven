@@ -11,9 +11,11 @@ radius = 0.3701172
 
 [node name="Player" type="Node3D" unique_id=1311379251]
 
-[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=386292148 node_paths=PackedStringArray("Pusher")]
+[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=386292148 node_paths=PackedStringArray("Pusher", "CameraHolder", "Camera")]
 script = ExtResource("1_yw17q")
-Pusher = NodePath("Camera/Pushinator")
+Pusher = NodePath("CameraHolder/Camera/Pushinator")
+CameraHolder = NodePath("CameraHolder")
+Camera = NodePath("CameraHolder/Camera")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody" unique_id=990403426]
 shape = SubResource("CapsuleShape3D_lxh4r")
@@ -21,10 +23,12 @@ shape = SubResource("CapsuleShape3D_lxh4r")
 [node name="PlayerVisual" type="MeshInstance3D" parent="PlayerBody" unique_id=1616479496]
 mesh = SubResource("CapsuleMesh_lxh4r")
 
-[node name="Camera" type="Camera3D" parent="PlayerBody" unique_id=1606827270 node_paths=PackedStringArray("XPivot", "YPivot")]
+[node name="CameraHolder" type="Node3D" parent="PlayerBody" unique_id=1481089546]
+
+[node name="Camera" type="Camera3D" parent="PlayerBody/CameraHolder" unique_id=1606827270 node_paths=PackedStringArray("XPivot", "YPivot")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47108877, 0)
 script = ExtResource("1_156m4")
-XPivot = NodePath("..")
+XPivot = NodePath("../..")
 YPivot = NodePath(".")
 
-[node name="Pushinator" parent="PlayerBody/Camera" unique_id=1541510130 instance=ExtResource("3_l2ya6")]
+[node name="Pushinator" parent="PlayerBody/CameraHolder/Camera" unique_id=1541510130 instance=ExtResource("3_l2ya6")]

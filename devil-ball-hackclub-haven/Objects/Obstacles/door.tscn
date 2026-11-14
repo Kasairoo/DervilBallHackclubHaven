@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bq8o3ep6vya4r"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxh4r"]
+size = Vector3(1.5, 2, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lxh4r"]
+size = Vector3(1.5, 2, 0.2)
+
+[node name="Door" type="Node3D" unique_id=1438692399]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1675155514]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1047061188]
+shape = SubResource("BoxShape3D_lxh4r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=624570494]
+mesh = SubResource("BoxMesh_lxh4r")

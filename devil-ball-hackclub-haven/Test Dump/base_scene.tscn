@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bmk4cssn4j87d" path="res://Objects/Player/player.tscn" id="1_36rt7"]
 [ext_resource type="PackedScene" uid="uid://btfa7bwad2bnp" path="res://Test Dump/test_ball.tscn" id="2_mg2k8"]
-[ext_resource type="PackedScene" uid="uid://dnuy8fwdbv1oy" path="res://Models/Neighbor.fbx" id="3_x4ym1"]
+[ext_resource type="PackedScene" uid="uid://bvjedt0pmvwmg" path="res://Objects/Pickables/pickable.tscn" id="4_54dvj"]
+[ext_resource type="PackedScene" uid="uid://db0rylcaqiw07" path="res://Objects/Enemies/Neighbor.tscn" id="4_t7ilp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_36rt7"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -14,6 +15,8 @@ sky_material = SubResource("ProceduralSkyMaterial_36rt7")
 [sub_resource type="Environment" id="Environment_x4ym1"]
 background_mode = 2
 sky = SubResource("Sky_mg2k8")
+fog_light_color = Color(0.21568628, 0.16470589, 0.18039216, 1)
+fog_density = 0.3915
 
 [node name="Base Scene" type="Node3D" unique_id=1301583280]
 
@@ -35,11 +38,18 @@ size = Vector3(30, 1, 30)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.914124, 3.8529062, 0)
 size = Vector3(8.171753, 10.724182, 30)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1620237410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1765976, 0.9279642, 10.084351)
+size = Vector3(2.2636108, 4.874298, 2.032959)
+
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_36rt7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1306024, -1.1920929e-07, -0.30080104)
 
 [node name="TestBall" parent="." unique_id=312142065 instance=ExtResource("2_mg2k8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.820137, -0.8271172, -0.19320536)
 
-[node name="Neighbor" parent="." unique_id=924010544 instance=ExtResource("3_x4ym1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6034813, -1.3271146, -8.1756)
+[node name="Neighbor" parent="." unique_id=434720014 instance=ExtResource("4_t7ilp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3098955, 4.422694, -5.0485)
+
+[node name="Pickable" parent="." unique_id=292722950 instance=ExtResource("4_54dvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.921096, -1.177116, 2.6419811)

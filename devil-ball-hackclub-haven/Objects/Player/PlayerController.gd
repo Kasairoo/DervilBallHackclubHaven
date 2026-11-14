@@ -6,9 +6,30 @@ const JUMP_VELOCITY = 4.5
 
 @export var Pusher : GamePusher
 
+@export var CameraHolder : Node3D
+
+@export var Camera : Camera3D
+
+var RightHand : Node3D
+
 var CoyoteTime = 0.0
 var JumpBuffer = 0.0
 var PushDelay = 0.0
+var WalkTimer = 0.0
+var FovBoost = 0.0
+
+func _ready() -> void:
+	Global.Player = self
+	RightHand = Pusher.get_node("Right Arm")
+
+func _process(delta: float) -> void:
+	CameraHolder.position.y = sin(WalkTimer * 10) * 0.05
+	Camera.rotation_degrees.z = lerp(Camera.rotation_degrees.z, ( sin(WalkTimer * 5) * 1 ) + ( Input.get_axis("PlayerRight", "PlayerLeft") * 3 ), 0.2 )
+	
+	
+	
+	FovBoost *= 0.96
+	Camera.fov = 90 + FovBoost + (velocity.length() * 0.5)
 
 func _physics_process(delta: float) -> void: 
 	
@@ -17,6 +38,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("PlayerClick") and PushDelay < 0.05:
 		PushDelay = 0.5
 		Pusher.Trigger()
+		FovBoost = -10
 	
 	CoyoteTime -= delta
 	JumpBuffer -= delta
@@ -41,8 +63,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		WalkTimer += delta
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		WalkTimer = 0.0
 
 	move_and_slide()
