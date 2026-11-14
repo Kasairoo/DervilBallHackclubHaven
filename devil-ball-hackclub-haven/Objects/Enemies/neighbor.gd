@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 2.0
 const JUMP_VELOCITY = 4.5
 
 @export var LookCast : ShapeCast3D
@@ -24,13 +24,12 @@ func _physics_process(delta: float) -> void:
 		for i in range(LookCast.get_collision_count()):
 			LookDirectionOffset += LookCast.get_collision_normal(i)
 	
-	LookDirectionOffset = LookDirectionOffset.normalized()
+	LookDirectionOffset.y = 0
 	
-	velocity.x += LookDirectionOffset.x
-	velocity.z += LookDirectionOffset.z
+	LookDirectionOffset = LookDirectionOffset.normalized() * SPEED
 	
-	velocity.x *= 0.7
-	velocity.z *= 0.7
+	velocity.x = LookDirectionOffset.x
+	velocity.z = LookDirectionOffset.z
 	
 	global_rotation_degrees.y += 180.0
 	
