@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 				if Target is RigidBody3D and !PushedList.has(Target):
 					PushedList.append(Target)
 					Target.linear_velocity = global_basis.z * -12
+					Target.angular_velocity = global_basis.x * -2
 					Target.linear_velocity.y += 5
 
 func Trigger():

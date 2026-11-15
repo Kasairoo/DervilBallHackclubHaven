@@ -6,6 +6,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxh4r"]
 radius = 0.3701172
+height = 1.7944336
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lxh4r"]
 
@@ -18,6 +19,7 @@ CameraHolder = NodePath("CameraHolder")
 Camera = NodePath("CameraHolder/Camera")
 
 [node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody" unique_id=990403426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1027832, 0)
 shape = SubResource("CapsuleShape3D_lxh4r")
 
 [node name="PlayerVisual" type="MeshInstance3D" parent="PlayerBody" unique_id=1616479496]
