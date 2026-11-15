@@ -1,11 +1,9 @@
 [gd_scene format=4 uid="uid://boj81d6y0b6ag"]
 
 [ext_resource type="PackedScene" uid="uid://bmk4cssn4j87d" path="res://Objects/Player/player.tscn" id="1_a174x"]
-[ext_resource type="PackedScene" uid="uid://bvjedt0pmvwmg" path="res://Objects/Pickables/pickable.tscn" id="4_detpc"]
 [ext_resource type="PackedScene" uid="uid://c5gpqswjkc8xj" path="res://Objects/Neighbors House/neighbors_house.tscn" id="4_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://dunuduw6hhivh" path="res://Objects/Balls/ball.tscn" id="6_np2xp"]
 [ext_resource type="PackedScene" uid="uid://cjjw0aaxvk7od" path="res://Objects/Particles/fence_particle.tscn" id="6_w7jjh"]
-[ext_resource type="PackedScene" uid="uid://bgql7uuc80nxs" path="res://Objects/Pickables/shotgun.tscn" id="7_6q3n4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_36rt7"]
 sky_top_color = Color(0.011764706, 0.019607844, 0.050980393, 1)
@@ -403,9 +401,6 @@ size = Vector3(300, 1, 300)
 
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_a174x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1168747, -1.0728836e-06, -0.66098213)
-
-[node name="Pickable" parent="." unique_id=292722950 instance=ExtResource("4_detpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.586733, -1.1771163, 1.5475321)
 
 [node name="Road" type="MeshInstance3D" parent="." unique_id=478082433]
 transform = Transform3D(427.4881, 0, 0, 0, 1, 0, 0, 0, 34.993656, 22.543076, -2, 20.86573)
@@ -850,6 +845,3 @@ mesh = SubResource("ArrayMesh_ha8nk")
 [node name="Fence34" type="MeshInstance3D" parent="Empty House10" unique_id=660981714]
 transform = Transform3D(1.6432134e-08, 1.2050596e-08, 0.27568546, 0.14647473, -1.7461149e-08, -8.730574e-09, 3.0237278e-08, 0.25364864, -1.1087338e-08, -0.0306433, -0.04056993, -0.0070057097)
 mesh = SubResource("ArrayMesh_lwc7c")
-
-[node name="Shotgun" parent="." unique_id=942533221 instance=ExtResource("7_6q3n4")]
-transform = Transform3D(1, 0, 0, 0, 0.6898714, -0.72393197, 0, 0.72393197, 0.6898714, -4.9038363, -1.406678, 2.462791)
