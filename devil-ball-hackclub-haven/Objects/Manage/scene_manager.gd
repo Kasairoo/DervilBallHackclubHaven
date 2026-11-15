@@ -9,9 +9,13 @@ func _ready() -> void:
 func ChangeScene(SceneTo):
 	for i in get_children():
 		if i != $Safe:
-			queue_free()
+			i.queue_free()
 	
 	var NewScene = load(SceneTo)
 	var NewSceneInstance = NewScene.instantiate()
 	
+	await get_tree().physics_frame
+	
 	add_child(NewSceneInstance)
+	
+	print(get_children())

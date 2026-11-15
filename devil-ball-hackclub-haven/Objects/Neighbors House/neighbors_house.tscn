@@ -11,7 +11,7 @@ size = Vector3(2.6044922, 3.623169, 1.0980988)
 
 [node name="Neighbors House" unique_id=876192789 instance=ExtResource("1_7juh8")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="House" parent_id_path=PackedInt32Array(964634283) index="1" unique_id=81796601]
+[node name="StaticBody3D" type="StaticBody3D" parent="House" parent_id_path=PackedInt32Array(516282062) index="1" unique_id=81796601]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="House/StaticBody3D" index="0" unique_id=544298004]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 7.1054274e-15, 0, 0, 1, 0, 0, 0)
