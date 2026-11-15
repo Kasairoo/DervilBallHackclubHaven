@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cu3y3s35ff6yc"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_aax1m"]
-stream_count = 1
+[ext_resource type="AudioStream" uid="uid://elryklnprrt5" path="res://SoundEffects/Safe Track.mp3" id="1_0d7o0"]
 
 [node name="Node3D" type="Node3D" unique_id=694690802]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=926274596]
-stream = SubResource("AudioStreamPlaylist_aax1m")
+stream = ExtResource("1_0d7o0")
+autoplay = true

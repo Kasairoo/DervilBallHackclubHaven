@@ -16,3 +16,14 @@ func _on_area_1_body_entered(body: Node3D) -> void:
 		Global.EventCurrent = "NeighborAnger"
 		#Say the turn back line
 		#Blah blah
+		LoadNeighbor()
+
+const NEIGHBOR = preload("uid://db0rylcaqiw07")
+
+func LoadNeighbor():
+	print("APPEAR")
+	var NEIGHBOR_Instance = NEIGHBOR.instantiate()
+	
+	NEIGHBOR_Instance.position = Vector3(0,0,-57)
+	
+	add_child(NEIGHBOR_Instance)
