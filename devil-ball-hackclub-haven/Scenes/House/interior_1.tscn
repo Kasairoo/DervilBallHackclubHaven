@@ -6,6 +6,7 @@
 [ext_resource type="Material" uid="uid://w58t8ff47aq3" path="res://Scenes/House/materialllls/brown_standard_material_3d.tres" id="2_0j4n6"]
 [ext_resource type="Material" uid="uid://iqiqkkk7bs8d" path="res://Scenes/House/materialllls/grey_standard_material_3d.tres" id="3_g18s6"]
 [ext_resource type="PackedScene" uid="uid://bvjedt0pmvwmg" path="res://Objects/Pickables/pickable.tscn" id="3_ocuec"]
+[ext_resource type="PackedScene" uid="uid://bgql7uuc80nxs" path="res://Objects/Pickables/shotgun.tscn" id="4_dq718"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0srf5"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -72,6 +73,28 @@ material = ExtResource("2_0j4n6")
 [node name="CSGBox3D22" type="CSGBox3D" parent="CSGCombiner3D" unique_id=666159408]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77666926, 3.6895452, -66.313095)
 size = Vector3(11.5, 8.5, 17.5)
+material = ExtResource("2_0j4n6")
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="CSGCombiner3D" unique_id=102836324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.77666926, 1.1895452, -89.313095)
+size = Vector3(5, 3.5, 29.5)
+material = ExtResource("2_0j4n6")
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="CSGCombiner3D" unique_id=2043545246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.2766695, 1.1895452, -101.313095)
+size = Vector3(18, 3.5, 5.5)
+material = ExtResource("2_0j4n6")
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1292858399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.52666926, 1.1895452, -89.063095)
+operation = 2
+size = Vector3(3.5, 2.5, 29)
+material = ExtResource("2_0j4n6")
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1380750456]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.0266695, 1.1895452, -101.313095)
+operation = 2
+size = Vector3(18.5, 2.5, 4.5)
 material = ExtResource("2_0j4n6")
 
 [node name="CSGBox3D23" type="CSGBox3D" parent="CSGCombiner3D" unique_id=920984046]
@@ -177,24 +200,32 @@ size = Vector3(1.5, 2, 1)
 material = ExtResource("2_0j4n6")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=265951203]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1987176, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23161608, 0)
 size = Vector3(900, 0.35, 900)
 material = ExtResource("3_g18s6")
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1112582980]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.776669, -0.060454845, -101.313095)
+size = Vector3(2, 1, 2.5)
+material = ExtResource("2_0j4n6")
+
+[node name="Pickable" parent="CSGCombiner3D" unique_id=942533221 instance=ExtResource("4_dq718")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -16, 1.5, -101.5)
 
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_0srf5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, 0.5)
 
-[node name="Pickable" parent="." unique_id=942533221 instance=ExtResource("3_ocuec")]
+[node name="Pickable" parent="." unique_id=891204605 instance=ExtResource("3_ocuec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0.5, -9)
 
 [node name="Pickable2" parent="." unique_id=1587305918 instance=ExtResource("3_ocuec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, -31.5)
 
 [node name="Door" parent="." unique_id=1438692399 instance=ExtResource("1_5ghw7")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.75, 1, -21)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.25, 0.95, -18.5)
 
 [node name="Door2" parent="." unique_id=1617694241 instance=ExtResource("1_5ghw7")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, -55.75)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5, 1, -52.75)
 
 [node name="Area1" type="Area3D" parent="." unique_id=1683382315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -58)
