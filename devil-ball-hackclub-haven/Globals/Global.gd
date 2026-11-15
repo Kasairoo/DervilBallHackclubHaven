@@ -2,10 +2,12 @@ extends Node
 
 var Player : CharacterBody3D
 
+var Command : CanvasLayer
 var CommandQueue : Array
 var EventCurrent : String
 var SceneManager : GameScenemanager
 var ScreenShake = 0.0
+var InUI: bool = false
 
 func _ready() -> void:
 	Global.EventCurrent = "GameBegin"
