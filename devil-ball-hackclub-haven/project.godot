@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="DevilBallHackclubHaven"
-run/main_scene="uid://yir4lm4fnf0i"
+run/main_scene="uid://boj81d6y0b6ag"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

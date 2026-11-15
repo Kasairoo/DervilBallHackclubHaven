@@ -75,10 +75,12 @@ CollisionBox = NodePath("CollisionBox")
 
 [node name="Right Arm" type="MeshInstance3D" parent="." unique_id=1819271286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.5007762, -0.4783746)
+cast_shadow = 0
 mesh = SubResource("BoxMesh_lxh4r")
 
 [node name="Left Arm" type="MeshInstance3D" parent="." unique_id=573867326]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.5007762, -0.4783746)
+cast_shadow = 0
 mesh = SubResource("BoxMesh_lxh4r")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=80546250]
