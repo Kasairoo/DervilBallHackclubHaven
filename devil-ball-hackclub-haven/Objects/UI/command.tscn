@@ -103,8 +103,9 @@ text = "Restart"
 libraries/ = SubResource("AnimationLibrary_5ijl2")
 
 [node name="Label" type="Label" parent="." unique_id=637331690]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_top = -85.0
+offset_right = 127.0
+offset_bottom = -62.0
 text = "CURRENT SCENE"
 
 [connection signal="pressed" from="Command/Flash/MenuButton" to="." method="_on_menu_button_pressed"]
