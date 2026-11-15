@@ -25,5 +25,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		freeze = false
 		set_collision_layer_value(1, true)
-
-	Global.AddCommand("Nothing to see here!")
+func _ready() -> void:
+			Global.AddCommand("Pick me up!")
