@@ -72,3 +72,8 @@ vertical_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1776638352]
 libraries/ = SubResource("AnimationLibrary_5ijl2")
+
+[node name="Label" type="Label" parent="." unique_id=637331690]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "CURRENT SCENE"

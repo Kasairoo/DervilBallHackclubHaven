@@ -8,10 +8,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Label.text = Global.EventCurrent
 	Delay -= delta
 	
 	if Delay < 0 and !Global.CommandQueue.is_empty():
 		$Command/Label.text = Global.CommandQueue[0]
 		Global.CommandQueue.remove_at(0)
+		$AnimationPlayer.play("RESET")
 		$AnimationPlayer.play("Show")
 		Delay = 3.0
