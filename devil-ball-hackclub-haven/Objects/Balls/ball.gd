@@ -12,6 +12,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		
 		if count == 4:
 			fence.queue_free()
+			Global.EventCurrent = "GateDown"
 			
 			var fx = fence_particle.instantiate()
 			fx.global_position = global_position

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cu3y3s35ff6yc"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_aax1m"]
+stream_count = 1
+
+[node name="Node3D" type="Node3D" unique_id=694690802]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=926274596]
+stream = SubResource("AudioStreamPlaylist_aax1m")
