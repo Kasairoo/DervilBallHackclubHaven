@@ -11,7 +11,8 @@ func _physics_process(delta: float) -> void:
 		for i in range(PlayerIdentifier.get_collision_count()):
 			var Target = PlayerIdentifier.get_collider(i)
 			if Target.get_parent().has_method("CheckOpen"):
-				Target.get_parent().CheckOpen(name)
+				if Target.get_parent().CheckOpen(name):
+					queue_free()
 			if Target == Global.Player:
 				reparent(Global.Player.RightHand)
 				position = Vector3(0,0,-0.3)
