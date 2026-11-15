@@ -18,6 +18,8 @@ sky = SubResource("Sky_mg2k8")
 fog_light_color = Color(0.21568628, 0.16470589, 0.18039216, 1)
 fog_density = 0.3915
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_q20pm"]
+
 [node name="Base Scene" type="Node3D" unique_id=1301583280]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=332803716]
@@ -63,3 +65,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.921096, -1.177116, 2.6419
 [node name="Door" parent="." unique_id=1438692399 instance=ExtResource("4_t7ilp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8269587, -0.3271141, 1.3975029)
 OpenItem = "KeyKeyKey"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1588744137]
+shape = SubResource("SphereShape3D_q20pm")
