@@ -81,17 +81,21 @@ shadow_mesh = SubResource("ArrayMesh_pnqbx")
 transparency = 1
 albedo_color = Color(1, 1, 1, 0.87058824)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_bcvot"]
+size = Vector3(3.1566162, 1.8227539, 1.6925049)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_lxh4r"]
 radius = 0.8
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eh8wk"]
 size = Vector3(0.6107788, 0.071899414, 0.21728516)
 
-[node name="Pickable" type="RigidBody3D" unique_id=942533221 node_paths=PackedStringArray("PlayerIdentifier", "particle")]
+[node name="Pickable" type="RigidBody3D" unique_id=942533221 node_paths=PackedStringArray("PlayerIdentifier", "particle", "EnemyDetector")]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_2dews")
 PlayerIdentifier = NodePath("PlayerIdentifier")
 particle = NodePath("MeshInstance3D/Particle")
+EnemyDetector = NodePath("MeshInstance3D/Area3D")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1526113482]
 transform = Transform3D(-4.3711385e-08, -1, -2.462589e-16, -0.74759316, 3.2678336e-08, 0.6641563, -0.6641563, 2.9031195e-08, -0.74759316, 0, 0, 0)
@@ -109,6 +113,13 @@ initial_velocity_min = 1.5
 initial_velocity_max = 2.0
 scale_amount_max = 0.1
 
+[node name="Area3D" type="Area3D" parent="MeshInstance3D" unique_id=1289039131]
+transform = Transform3D(1, 0, 0, 0, 1.0000004, 0, 0, 0, 1.0000004, 0, 0, 0)
+
+[node name="EnemyDetector" type="CollisionShape3D" parent="MeshInstance3D/Area3D" unique_id=891620215]
+transform = Transform3D(1, -1.7763568e-15, 2.9802322e-08, 0, 1, -1.7763568e-15, -2.9802322e-08, 1.7763568e-15, 1, 2.0927303, 0.41137713, 0.4240427)
+shape = SubResource("BoxShape3D_bcvot")
+
 [node name="PlayerIdentifier" type="ShapeCast3D" parent="." unique_id=1849614092]
 shape = SubResource("SphereShape3D_lxh4r")
 target_position = Vector3(0, 0, 0)
@@ -116,3 +127,6 @@ target_position = Vector3(0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1210592989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027295351, 0.053181812, -0.1780259)
 shape = SubResource("BoxShape3D_eh8wk")
+
+[connection signal="body_entered" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="MeshInstance3D/Area3D" to="." method="_on_area_3d_body_exited"]
