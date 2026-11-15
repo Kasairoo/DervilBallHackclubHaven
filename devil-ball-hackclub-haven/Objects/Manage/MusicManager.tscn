@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://cu3y3s35ff6yc"]
 
 [ext_resource type="AudioStream" uid="uid://elryklnprrt5" path="res://SoundEffects/Safe Track.mp3" id="1_0d7o0"]
+[ext_resource type="Script" uid="uid://cjdo0clktgk8a" path="res://Objects/Manage/music_manager.gd" id="1_ew7jm"]
+[ext_resource type="AudioStream" uid="uid://bkr1oey8ykcjx" path="res://SoundEffects/Evil Track.mp3" id="3_7og6c"]
 
 [node name="Node3D" type="Node3D" unique_id=694690802]
+script = ExtResource("1_ew7jm")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=926274596]
+[node name="Safe" type="AudioStreamPlayer" parent="." unique_id=926274596]
 stream = ExtResource("1_0d7o0")
+autoplay = true
+
+[node name="Evil" type="AudioStreamPlayer" parent="." unique_id=1229276303]
+stream = ExtResource("3_7og6c")
 autoplay = true
