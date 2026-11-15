@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 	$RigidBody3D/MeshInstance3D2.visible = !Open
 	$RigidBody3D/CollisionShape3D.set_deferred("disabled", Open)
 	$RigidBody3D/CollisionShape3D2.set_deferred("disabled", !Open)
+	$RigidBody3D.set_collision_layer_value(1, !Open)
 	if !Open:
 		$RigidBody3D.freeze = true
 		$RigidBody3D.position = Vector3(0,0,0)
