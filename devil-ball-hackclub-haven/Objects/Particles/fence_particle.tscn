@@ -12,6 +12,7 @@ point_count = 2
 
 [node name="fence_particle" type="CPUParticles3D" unique_id=1535506332]
 material_override = SubResource("StandardMaterial3D_w7jjh")
+emitting = false
 amount = 20
 one_shot = true
 explosiveness = 1.0
