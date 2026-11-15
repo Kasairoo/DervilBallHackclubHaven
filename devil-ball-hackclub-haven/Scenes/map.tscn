@@ -338,6 +338,9 @@ shadow_mesh = SubResource("ArrayMesh_afwok")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_olcgw"]
 points = PackedVector3Array(0.20766878, 0.03837423, 0.0023249993, 0.2102376, -0.016354544, 0.0023253523, 0.20948836, 0.037618876, 0.0023249993, 0.20766878, 0.03837423, -4.0978193e-08, -2.1338463e-05, 0.03837423, 0.0023249993, 0.2102376, -0.016354544, -4.0978193e-08, 0.21612452, -0.0024152063, 8.505152e-05, 0.21612452, 0.00094373524, 8.505152e-05, 0.2102376, 0.035802796, 0.0023249993, -0.0025687641, -0.016354544, 0.0023253523, 0.21584623, 0.025892043, 8.505152e-05, 0.20948836, 0.037618876, -4.0978193e-08, 0.21584623, 0.025892043, -0.001281726, -2.1338463e-05, 0.03837423, -4.0978193e-08, -0.0018195213, 0.037618876, 0.0023249993, 0.21612452, -0.0024152063, -0.001281726, -0.0025687641, -0.016354544, -4.0978193e-08, 0.21612452, 0.00094373524, -0.001281726, -0.0025687641, 0.035802796, 0.0023249993, 0.0015413682, 0.025892043, -0.001281726, -0.0018195213, 0.037618876, -4.0978193e-08, 0.0015413682, -0.0024152063, -0.001281726, -0.0025687641, 0.035802796, -4.0978193e-08)
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_dlo4w"]
+points = PackedVector3Array(0.20766878, 0.03837423, 0.0023249993, 0.2102376, -0.016354544, 0.0023253523, 0.20948836, 0.037618876, 0.0023249993, 0.20766878, 0.03837423, -4.0978193e-08, -2.1338463e-05, 0.03837423, 0.0023249993, 0.2102376, -0.016354544, -4.0978193e-08, 0.21612452, -0.0024152063, 8.505152e-05, 0.21612452, 0.00094373524, 8.505152e-05, 0.2102376, 0.035802796, 0.0023249993, -0.0025687641, -0.016354544, 0.0023253523, 0.21584623, 0.025892043, 8.505152e-05, 0.20948836, 0.037618876, -4.0978193e-08, 0.21584623, 0.025892043, -0.001281726, -2.1338463e-05, 0.03837423, -4.0978193e-08, -0.0018195213, 0.037618876, 0.0023249993, 0.21612452, -0.0024152063, -0.001281726, -0.0025687641, -0.016354544, -4.0978193e-08, 0.21612452, 0.00094373524, -0.001281726, -0.0025687641, 0.035802796, 0.0023249993, 0.0015413682, 0.025892043, -0.001281726, -0.0018195213, 0.037618876, -4.0978193e-08, 0.0015413682, -0.0024152063, -0.001281726, -0.0025687641, 0.035802796, -4.0978193e-08)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvypm"]
 resource_name = "Red"
 vertex_color_use_as_albedo = true
@@ -380,7 +383,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q0mm3")
 
-[node name="Base Scene" type="Node3D" unique_id=1301583280]
+[node name="Base Scene2" type="Node3D" unique_id=1301583280]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=332803716]
 transform = Transform3D(0.9861904, 0.10776316, -0.12576051, 3.4940516e-08, 0.7593506, 0.65068173, 0.16561586, -0.6416961, 0.7488643, 0, 0, 0)
@@ -535,8 +538,16 @@ mesh = SubResource("ArrayMesh_whdmo")
 [node name="Middle Fence Body" type="StaticBody3D" parent="Middle Fence" unique_id=454981311]
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Middle Fence/Middle Fence Body" unique_id=821320595]
-transform = Transform3D(1, 0, 0, 0, 1, 8.4703295e-22, 0, -8.4703295e-22, 1, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_6q3n4")
+transform = Transform3D(1, 0, 0, 0, 1, -1.0728897e-21, 0, -8.4703295e-22, 1, 0, -0.00045178886, 0)
+shape = SubResource("ConvexPolygonShape3D_dlo4w")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Middle Fence/Middle Fence Body" unique_id=218924645]
+transform = Transform3D(1, 0, 0, 0, 1, -1.0728897e-21, 0, -8.4703295e-22, 1, 0, 0.036983494, 7.450581e-09)
+shape = SubResource("ConvexPolygonShape3D_dlo4w")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Middle Fence/Middle Fence Body" unique_id=1839460129]
+transform = Transform3D(1, 0, 0, 0, 1, -1.0728897e-21, 0, -8.4703295e-22, 1, 0, 0.07187343, 7.450581e-09)
+shape = SubResource("ConvexPolygonShape3D_dlo4w")
 
 [node name="Empty House" type="MeshInstance3D" parent="." unique_id=1824406855]
 transform = Transform3D(362.73224, 0, 0, 0, -8.138558e-05, 394.24615, 0, -682.7117, -4.6997808e-05, -23.167276, 2.8106027, -16.901161)

@@ -22,6 +22,8 @@ func _process(delta: float) -> void:
 		$RigidBody3D.freeze = false
 
 func CheckOpen(Name):
-	if Name == OpenItem:
-		print("YEA!")
+	if !Open:
 		Open = true
+		return true
+	else:
+		return false
