@@ -6,9 +6,16 @@ extends RigidBody3D
 var DropDelay = 0.0
 
 var Enemy: CharacterBody3D  = null
-	
+
+var WithinRadius = false
+
 func _physics_process(delta: float) -> void:
 	DropDelay -= delta
+	
+	if global_position.distance_squared_to(Global.Player.global_position) < 2 ** 2 and !WithinRadius:
+		Global.AddCommand("Woah is that a shotgun?")
+		WithinRadius = true
+	
 	if PlayerIdentifier.is_colliding() and DropDelay < 0.0:
 		for i in range(PlayerIdentifier.get_collision_count()):
 			var Target = PlayerIdentifier.get_collider(i)
@@ -31,13 +38,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		freeze = false
 		set_collision_layer_value(1, true)
-func _ready() -> void:
-			Global.AddCommand("Pick me up!")
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.name == "Neighbor":
+	if body is Neighbor:
 		Enemy = body
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.name == "Neighbor":
+	if body is Neighbor:
 		Enemy = null

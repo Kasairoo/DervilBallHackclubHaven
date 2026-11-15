@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_1_body_entered(body: Node3D) -> void:
-	if Global.EventCurrent == "GateDown":
+	if Global.EventCurrent == "GateDown" and body == Global.Player:
 		Global.EventCurrent = "NeighborAnger"
 		#Say the turn back line
 		#Blah blah
@@ -22,6 +22,7 @@ const NEIGHBOR = preload("uid://db0rylcaqiw07")
 
 func LoadNeighbor():
 	print("APPEAR")
+	Global.AddCommand("STAY BACK!")
 	var NEIGHBOR_Instance = NEIGHBOR.instantiate()
 	
 	NEIGHBOR_Instance.position = Vector3(0,0,-57)

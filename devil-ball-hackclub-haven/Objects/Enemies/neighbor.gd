@@ -1,4 +1,5 @@
 extends CharacterBody3D
+
 class_name Neighbor
 
 const SPEED = 4.6
