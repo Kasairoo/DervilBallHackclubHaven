@@ -10,6 +10,8 @@ func _physics_process(delta: float) -> void:
 	if PlayerIdentifier.is_colliding() and DropDelay < 0.0:
 		for i in range(PlayerIdentifier.get_collision_count()):
 			var Target = PlayerIdentifier.get_collider(i)
+			if !Target:
+				return
 			if Target.get_parent().has_method("CheckOpen"):
 				if Target.get_parent().CheckOpen(name):
 					queue_free()
@@ -26,5 +28,3 @@ func _physics_process(delta: float) -> void:
 	else:
 		freeze = false
 		set_collision_layer_value(1, true)
-func _ready() -> void:
-			Global.AddCommand("Pick me up!")
