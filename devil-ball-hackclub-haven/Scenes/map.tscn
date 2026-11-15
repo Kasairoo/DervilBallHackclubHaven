@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://boj81d6y0b6ag"]
 
 [ext_resource type="PackedScene" uid="uid://bmk4cssn4j87d" path="res://Objects/Player/player.tscn" id="1_a174x"]
-[ext_resource type="PackedScene" uid="uid://db0rylcaqiw07" path="res://Objects/Enemies/Neighbor.tscn" id="3_i2l8k"]
 [ext_resource type="PackedScene" uid="uid://bvjedt0pmvwmg" path="res://Objects/Pickables/pickable.tscn" id="4_detpc"]
 [ext_resource type="PackedScene" uid="uid://c5gpqswjkc8xj" path="res://Objects/Neighbors House/neighbors_house.tscn" id="4_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://dunuduw6hhivh" path="res://Objects/Balls/ball.tscn" id="6_np2xp"]
@@ -401,9 +400,6 @@ size = Vector3(300, 1, 300)
 
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_a174x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5741768, -1.1920929e-07, 2.5757864)
-
-[node name="Neighbor" parent="." unique_id=434720014 instance=ExtResource("3_i2l8k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1010847, -1.4313716, -4.0236025)
 
 [node name="Pickable" parent="." unique_id=292722950 instance=ExtResource("4_detpc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.586733, -1.1771163, 1.5475321)
