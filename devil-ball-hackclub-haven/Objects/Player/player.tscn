@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://df413gho3k842" path="res://Objects/Player/camera.gd" id="1_156m4"]
 [ext_resource type="Script" uid="uid://2eamdd6mlclp" path="res://Objects/Player/PlayerController.gd" id="1_yw17q"]
 [ext_resource type="PackedScene" uid="uid://mb4qhfti3lx6" path="res://Objects/Player/pushinator.tscn" id="3_l2ya6"]
+[ext_resource type="AudioStream" uid="uid://b67ft565h6782" path="res://SoundEffects/soundreality-footsteps-walking-boots-parquet-2-420134.mp3" id="4_o1rty"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxh4r"]
 radius = 0.3701172
@@ -35,3 +36,11 @@ XPivot = NodePath("../..")
 YPivot = NodePath(".")
 
 [node name="Pushinator" parent="PlayerBody/CameraHolder/Camera" unique_id=1541510130 instance=ExtResource("3_l2ya6")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PlayerBody" unique_id=619337763]
+stream = ExtResource("4_o1rty")
+volume_db = 19.74
+autoplay = true
+
+[node name="AudioListener3D" type="AudioListener3D" parent="PlayerBody" unique_id=1768605197]
+current = true
