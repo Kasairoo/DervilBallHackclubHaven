@@ -145,7 +145,7 @@ radius = 2.0
 height = 1.9704895
 
 [node name="Neighbor" type="CharacterBody3D" unique_id=434720014 node_paths=PackedStringArray("LookCast")]
-collision_layer = 0
+collision_layer = 2
 script = ExtResource("1_auf70")
 LookCast = NodePath("ShapeCast3D")
 death_particle = ExtResource("2_u66gh")

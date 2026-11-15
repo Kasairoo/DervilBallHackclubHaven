@@ -4,12 +4,17 @@
 [ext_resource type="Script" uid="uid://2eamdd6mlclp" path="res://Objects/Player/PlayerController.gd" id="1_yw17q"]
 [ext_resource type="PackedScene" uid="uid://mb4qhfti3lx6" path="res://Objects/Player/pushinator.tscn" id="3_l2ya6"]
 [ext_resource type="AudioStream" uid="uid://b67ft565h6782" path="res://SoundEffects/soundreality-footsteps-walking-boots-parquet-2-420134.mp3" id="4_o1rty"]
+[ext_resource type="Script" uid="uid://clq2mokkuc2oj" path="res://Objects/Player/neighbor_detector.gd" id="5_t45n6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxh4r"]
 radius = 0.3701172
 height = 1.7944336
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_lxh4r"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o1rty"]
+radius = 1.0029297
+height = 2.9899902
 
 [node name="Player" type="Node3D" unique_id=1311379251]
 
@@ -44,3 +49,14 @@ autoplay = true
 
 [node name="AudioListener3D" type="AudioListener3D" parent="PlayerBody" unique_id=1768605197]
 current = true
+
+[node name="NeighborDetector" type="Area3D" parent="PlayerBody" unique_id=1497556933]
+collision_mask = 2
+script = ExtResource("5_t45n6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody/NeighborDetector" unique_id=490114787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.071899414, 0)
+shape = SubResource("CapsuleShape3D_o1rty")
+
+[connection signal="body_entered" from="PlayerBody/NeighborDetector" to="PlayerBody" method="_on_neighbor_detector_body_entered"]
+[connection signal="body_entered" from="PlayerBody/NeighborDetector" to="PlayerBody/NeighborDetector" method="_on_body_entered"]
