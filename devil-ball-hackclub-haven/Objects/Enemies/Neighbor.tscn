@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brnruw84d0com" path="res://Objects/Enemies/neighbor.gd" id="1_auf70"]
 [ext_resource type="Material" uid="uid://dn80q3dlpbx0l" path="res://Models/eyes.tres" id="2_ncbng"]
+[ext_resource type="PackedScene" uid="uid://diiy7k4m8yg4h" path="res://Objects/Particles/death_particle.tscn" id="2_u66gh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtn6k"]
 resource_name = "Red"
@@ -147,6 +148,7 @@ height = 1.9704895
 collision_layer = 0
 script = ExtResource("1_auf70")
 LookCast = NodePath("ShapeCast3D")
+death_particle = ExtResource("2_u66gh")
 
 [node name="Armature_001" type="Node3D" parent="." unique_id=670336613]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 2.6778355, 0.0062270043)

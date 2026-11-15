@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c5gpqswjkc8xj" path="res://Objects/Neighbors House/neighbors_house.tscn" id="4_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://dunuduw6hhivh" path="res://Objects/Balls/ball.tscn" id="6_np2xp"]
 [ext_resource type="PackedScene" uid="uid://cjjw0aaxvk7od" path="res://Objects/Particles/fence_particle.tscn" id="6_w7jjh"]
+[ext_resource type="PackedScene" uid="uid://bgql7uuc80nxs" path="res://Objects/Pickables/shotgun.tscn" id="7_6q3n4"]
 [ext_resource type="PackedScene" uid="uid://bf1gmapbx8bsj" path="res://Objects/UI/command.tscn" id="7_w7jjh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_36rt7"]
@@ -852,3 +853,6 @@ transform = Transform3D(1.6432134e-08, 1.2050596e-08, 0.27568546, 0.14647473, -1
 mesh = SubResource("ArrayMesh_lwc7c")
 
 [node name="Command" parent="." unique_id=669717989 instance=ExtResource("7_w7jjh")]
+
+[node name="Shotgun" parent="." unique_id=942533221 instance=ExtResource("7_6q3n4")]
+transform = Transform3D(1, 0, 0, 0, 0.6898714, -0.72393197, 0, 0.72393197, 0.6898714, -4.9038363, -1.406678, 2.462791)

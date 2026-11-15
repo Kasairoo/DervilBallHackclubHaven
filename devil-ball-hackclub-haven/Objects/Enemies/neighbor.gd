@@ -5,6 +5,7 @@ const SPEED = 4.6
 const JUMP_VELOCITY = 4.5
 
 @export var LookCast : ShapeCast3D
+@export var death_particle: PackedScene
 
 func _physics_process(delta: float) -> void:
 	
@@ -39,3 +40,11 @@ func _physics_process(delta: float) -> void:
 	global_rotation_degrees.y += 180.0
 	
 	move_and_slide()
+
+func kill():
+	var fx = death_particle.instantiate()
+	fx.global_position = global_position + Vector3(0, 3, 0)
+	get_tree().current_scene.add_child(fx)
+	fx.restart()
+	fx.finished.connect(fx.queue_free)
+	queue_free()

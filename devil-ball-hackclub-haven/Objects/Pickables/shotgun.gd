@@ -2,8 +2,10 @@ extends RigidBody3D
 
 @export var PlayerIdentifier : ShapeCast3D
 @export var particle : CPUParticles3D
-
+@export var EnemyDetector : Area3D
 var DropDelay = 0.0
+
+var Enemy: CharacterBody3D  = null
 	
 func _physics_process(delta: float) -> void:
 	DropDelay -= delta
@@ -24,8 +26,18 @@ func _physics_process(delta: float) -> void:
 			reparent(get_tree().current_scene)
 		if Input.is_action_just_pressed("PlayerClick"):
 			particle.restart()
+			if Enemy != null:
+				Enemy.kill()
 	else:
 		freeze = false
 		set_collision_layer_value(1, true)
 func _ready() -> void:
 			Global.AddCommand("Pick me up!")
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.name == "Neighbor":
+		Enemy = body
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body.name == "Neighbor":
+		Enemy = null
