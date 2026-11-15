@@ -14,9 +14,9 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor():
 		if velocity.y > 0.0:
-			velocity.y -= 10.0 * delta
+			velocity.y -= 14.0 * delta
 		else:
-			velocity.y -= 15.0 * delta
+			velocity.y -= 19.0 * delta
 	
 	var LookDirectionOffset = -global_basis.z
 	
