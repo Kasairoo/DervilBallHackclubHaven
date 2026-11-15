@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dunuduw6hhivh"]
 
-[ext_resource type="Script" uid="uid://dyn63rmn0efm1" path="res://Test Dump/test_ball.gd" id="1_y088d"]
+[ext_resource type="Script" uid="uid://cvtc5nsdfir1p" path="res://Objects/Balls/ball.gd" id="1_7curx"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80swg"]
 bounce = 0.9
@@ -52,7 +52,7 @@ shadow_mesh = SubResource("ArrayMesh_h3slk")
 [node name="Ball" type="RigidBody3D" unique_id=312142065]
 physics_material_override = SubResource("PhysicsMaterial_80swg")
 center_of_mass_mode = 1
-script = ExtResource("1_y088d")
+script = ExtResource("1_7curx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=278712089]
 shape = SubResource("SphereShape3D_xdrwm")
@@ -60,3 +60,13 @@ shape = SubResource("SphereShape3D_xdrwm")
 [node name="Normal Ball" type="MeshInstance3D" parent="." unique_id=1457793632]
 transform = Transform3D(53.23, 0, 0, 0, -2.326757e-06, 53.23, 0, -53.23, -2.326757e-06, 0, 0, 0)
 mesh = SubResource("ArrayMesh_7curx")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1089989792]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2127607130]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_xdrwm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

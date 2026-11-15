@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		if CollisionBox.is_colliding():
 			for i in range(CollisionBox.get_collision_count()):
 				var Target = CollisionBox.get_collider(i)
-				print(Target)
+				#print(Target)
 				if Target is RigidBody3D and !PushedList.has(Target):
 					PushedList.append(Target)
 					Target.linear_velocity = global_basis.z * -12

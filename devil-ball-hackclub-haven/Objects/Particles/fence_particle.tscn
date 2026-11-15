@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cjjw0aaxvk7od"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7jjh"]
+transparency = 1
+albedo_color = Color(0.7719, 0.8135383, 0.83, 0.5294118)
+
+[sub_resource type="SphereMesh" id="SphereMesh_bcvot"]
+
+[sub_resource type="Curve" id="Curve_hss5h"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="fence_particle" type="CPUParticles3D" unique_id=1535506332]
+material_override = SubResource("StandardMaterial3D_w7jjh")
+amount = 20
+one_shot = true
+explosiveness = 1.0
+mesh = SubResource("SphereMesh_bcvot")
+emission_shape = 3
+emission_box_extents = Vector3(0.26, 2.395, 10.86)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.1
+scale_amount_min = 0.1
+scale_amount_curve = SubResource("Curve_hss5h")
