@@ -21,7 +21,6 @@ func _process(delta: float) -> void:
 					Target.linear_velocity.y += 5
 
 func Trigger():
-	Global.ScreenShake += 2
 	$AnimationPlayer.play("RESET")
 	$AnimationPlayer.play("Push")
 	

@@ -47,8 +47,8 @@ shadow_mesh = SubResource("ArrayMesh_tcmsi")
 [sub_resource type="SphereShape3D" id="SphereShape3D_lxh4r"]
 radius = 0.8
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_xdrwm"]
-radius = 0.22180675
+[sub_resource type="BoxShape3D" id="BoxShape3D_eh8wk"]
+size = Vector3(0.6107788, 0.071899414, 0.21728516)
 
 [node name="Pickable" type="RigidBody3D" unique_id=942533221 node_paths=PackedStringArray("PlayerIdentifier")]
 script = ExtResource("1_eh8wk")
@@ -62,4 +62,5 @@ shape = SubResource("SphereShape3D_lxh4r")
 target_position = Vector3(0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1210592989]
-shape = SubResource("SphereShape3D_xdrwm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027295351, 0.053181812, -0.1780259)
+shape = SubResource("BoxShape3D_eh8wk")
