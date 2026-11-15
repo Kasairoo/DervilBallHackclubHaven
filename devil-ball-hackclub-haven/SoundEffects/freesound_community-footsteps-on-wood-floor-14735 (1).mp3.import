@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://34cffg6vsiad"
+path="res://.godot/imported/freesound_community-footsteps-on-wood-floor-14735 (1).mp3-38c4f8d125e384f549bc6811ccf630fa.mp3str"
+
+[deps]
+
+source_file="res://SoundEffects/freesound_community-footsteps-on-wood-floor-14735 (1).mp3"
+dest_files=["res://.godot/imported/freesound_community-footsteps-on-wood-floor-14735 (1).mp3-38c4f8d125e384f549bc6811ccf630fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
