@@ -4,7 +4,7 @@ class_name GameScenemanager
 
 func _ready() -> void:
 	Global.SceneManager = self
-	ChangeScene("res://Scenes/House/interior_1.tscn")
+	ChangeScene("res://Scenes/map.tscn")
 
 func ChangeScene(SceneTo):
 	for i in get_children():

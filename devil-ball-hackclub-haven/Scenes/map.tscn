@@ -403,7 +403,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8271171, 0)
 size = Vector3(300, 1, 300)
 
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_a174x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5741768, -1.1920929e-07, 2.5757864)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.939333, -1.0728836e-06, -2.52436)
 
 [node name="Pickable" parent="." unique_id=292722950 instance=ExtResource("4_detpc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.586733, -1.1771163, 1.5475321)
