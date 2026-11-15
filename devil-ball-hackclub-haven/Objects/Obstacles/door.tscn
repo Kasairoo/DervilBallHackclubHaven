@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bq8o3ep6vya4r"]
+
+[ext_resource type="Script" uid="uid://d331tmi1cdty8" path="res://Objects/Obstacles/door.gd" id="1_v3s44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxh4r"]
+size = Vector3(1.5, 2, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v3s44"]
+size = Vector3(1.4, 1.9, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_lxh4r"]
+size = Vector3(1.5, 2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3s44"]
+albedo_color = Color(1, 0.70980394, 0.2, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xdrwm"]
+material = SubResource("StandardMaterial3D_v3s44")
+size = Vector3(0.44353515, 0.2, 0.10498047)
+
+[node name="Door" type="Node3D" unique_id=1438692399]
+script = ExtResource("1_v3s44")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1675155514]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1047061188]
+shape = SubResource("BoxShape3D_lxh4r")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="RigidBody3D" unique_id=812722861]
+shape = SubResource("BoxShape3D_v3s44")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=624570494]
+mesh = SubResource("BoxMesh_lxh4r")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="RigidBody3D" unique_id=269043032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38631836, 0, -0.1315918)
+mesh = SubResource("BoxMesh_xdrwm")

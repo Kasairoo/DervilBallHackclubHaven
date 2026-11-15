@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c5gpqswjkc8xj"]
+
+[ext_resource type="PackedScene" uid="uid://b5p3c85lox11t" path="res://Models/Neighbors House/Neighbors House.fbx" id="1_7juh8"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7juh8"]
+points = PackedVector3Array(0.013677031, 0.010941611, 0.0045029977, 0, 0.010941611, 0.023072014, 0.013677031, -0.010941609, 0.0045029977, 0.009998048, 0.009999107, -0.01, 0.011398418, 0.010941611, 0.0019682096, 0, -0.010941609, 0.023072014, -0.013677031, 0.010941611, 0.0045029977, 0.011398418, -0.010941609, 0.0019682096, 0.009998048, -0.010001248, -0.01, -0.010000726, 0.009999107, -0.01, -0.011401096, 0.010941611, 0.0019682096, -0.013677031, -0.010941609, 0.0045029977, -0.011401096, -0.010941609, 0.0019682096, -0.010000726, -0.010001248, -0.01)
+
+[node name="Neighbors House" unique_id=876192789 instance=ExtResource("1_7juh8")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House" parent_id_path=PackedInt32Array(1194284467) index="1" unique_id=81796601]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/StaticBody3D" index="0" unique_id=544298004]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 7.1054274e-15, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_7juh8")

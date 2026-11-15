@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://yir4lm4fnf0i"]
+
+[ext_resource type="PackedScene" uid="uid://bmk4cssn4j87d" path="res://Objects/Player/player.tscn" id="1_36rt7"]
+[ext_resource type="PackedScene" uid="uid://btfa7bwad2bnp" path="res://Test Dump/test_ball.tscn" id="2_mg2k8"]
+[ext_resource type="PackedScene" uid="uid://bvjedt0pmvwmg" path="res://Objects/Pickables/pickable.tscn" id="4_54dvj"]
+[ext_resource type="PackedScene" uid="uid://bq8o3ep6vya4r" path="res://Objects/Obstacles/door.tscn" id="4_t7ilp"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_36rt7"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mg2k8"]
+sky_material = SubResource("ProceduralSkyMaterial_36rt7")
+
+[sub_resource type="Environment" id="Environment_x4ym1"]
+background_mode = 2
+sky = SubResource("Sky_mg2k8")
+fog_light_color = Color(0.21568628, 0.16470589, 0.18039216, 1)
+fog_density = 0.3915
+
+[node name="Base Scene" type="Node3D" unique_id=1301583280]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=332803716]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1625630679]
+environment = SubResource("Environment_x4ym1")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="." unique_id=1123073030]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1736281389]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8271171, 0)
+size = Vector3(30, 1, 30)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1835488853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.914124, 3.8529062, 0)
+size = Vector3(8.171753, 10.724182, 30)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1620237410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1765976, 0.9279642, 10.084351)
+size = Vector3(2.2636108, 4.874298, 2.032959)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D" unique_id=1891632788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.808403, -0.009184837, 1.6008301)
+size = Vector3(3, 3, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D" unique_id=506664290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.808403, -0.30918485, 1.6008301)
+operation = 2
+size = Vector3(1.5, 2, 1)
+
+[node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_36rt7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1306024, -1.1920929e-07, -0.30080104)
+
+[node name="TestBall" parent="." unique_id=312142065 instance=ExtResource("2_mg2k8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.820137, -0.8271172, -0.19320536)
+
+[node name="KeyKeyKey" parent="." unique_id=292722950 instance=ExtResource("4_54dvj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.921096, -1.177116, 2.6419811)
+
+[node name="Door" parent="." unique_id=1438692399 instance=ExtResource("4_t7ilp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.8269587, -0.3271141, 1.3975029)
+OpenItem = "KeyKeyKey"

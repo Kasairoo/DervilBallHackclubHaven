@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://mb4qhfti3lx6"]
+
+[ext_resource type="Script" uid="uid://bg0u0j8wrmjgg" path="res://Objects/Player/pushinator.gd" id="1_s5rq6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lxh4r"]
+size = Vector3(0.2, 0.2, 0.1)
+
+[sub_resource type="Animation" id="Animation_lf388"]
+resource_name = "Push"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Arm:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.9802322e-08, 0.099999994, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.3, -0.1, -0.478), Vector3(-0.3, -0.06625247, -0.8), Vector3(-0.3, -0.1, -0.478), Vector3(-0.3, -0.5007762, -0.4783746)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Arm:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.099999994, 0.39999998, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.3, -0.1, -0.478), Vector3(0.3, -0.06625247, -0.8), Vector3(0.3, -0.1, -0.478), Vector3(0.3, -0.5007762, -0.4783746)]
+}
+
+[sub_resource type="Animation" id="Animation_s5rq6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Left Arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.3, -0.5007762, -0.4783746)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Right Arm:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.3, -0.5007762, -0.4783746)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q0tre"]
+_data = {
+&"Push": SubResource("Animation_lf388"),
+&"RESET": SubResource("Animation_s5rq6")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lxh4r"]
+size = Vector3(1, 2, 1)
+
+[node name="Pushinator" type="Node3D" unique_id=1541510130 node_paths=PackedStringArray("CollisionBox")]
+script = ExtResource("1_s5rq6")
+CollisionBox = NodePath("CollisionBox")
+
+[node name="Right Arm" type="MeshInstance3D" parent="." unique_id=1819271286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.5007762, -0.4783746)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_lxh4r")
+
+[node name="Left Arm" type="MeshInstance3D" parent="." unique_id=573867326]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, -0.5007762, -0.4783746)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_lxh4r")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=80546250]
+libraries/ = SubResource("AnimationLibrary_q0tre")
+
+[node name="CollisionBox" type="ShapeCast3D" parent="." unique_id=1216888095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.88553)
+shape = SubResource("BoxShape3D_lxh4r")
+target_position = Vector3(0, 0, 0)

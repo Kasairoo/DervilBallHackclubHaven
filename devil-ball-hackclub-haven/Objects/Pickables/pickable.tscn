@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bvjedt0pmvwmg"]
+
+[ext_resource type="Script" uid="uid://bctie241fgad8" path="res://Objects/Pickables/pickable.gd" id="1_eh8wk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh8wk"]
+albedo_color = Color(0.9647059, 0.30588236, 0.3372549, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_bu516"]
+material = SubResource("StandardMaterial3D_eh8wk")
+size = Vector3(0.2, 0.3, 0.6)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_lxh4r"]
+radius = 0.8
+
+[node name="Pickable" type="Node3D" unique_id=292722950 node_paths=PackedStringArray("PlayerIdentifier")]
+script = ExtResource("1_eh8wk")
+PlayerIdentifier = NodePath("PlayerIdentifier")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1526113482]
+mesh = SubResource("BoxMesh_bu516")
+
+[node name="PlayerIdentifier" type="ShapeCast3D" parent="." unique_id=1849614092]
+shape = SubResource("SphereShape3D_lxh4r")
+target_position = Vector3(0, 0, 0)

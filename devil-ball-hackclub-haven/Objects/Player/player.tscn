@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://bmk4cssn4j87d"]
+
+[ext_resource type="Script" uid="uid://df413gho3k842" path="res://Objects/Player/camera.gd" id="1_156m4"]
+[ext_resource type="Script" uid="uid://2eamdd6mlclp" path="res://Objects/Player/PlayerController.gd" id="1_yw17q"]
+[ext_resource type="PackedScene" uid="uid://mb4qhfti3lx6" path="res://Objects/Player/pushinator.tscn" id="3_l2ya6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lxh4r"]
+radius = 0.3701172
+height = 1.7944336
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_lxh4r"]
+
+[node name="Player" type="Node3D" unique_id=1311379251]
+
+[node name="PlayerBody" type="CharacterBody3D" parent="." unique_id=386292148 node_paths=PackedStringArray("Pusher", "CameraHolder", "Camera")]
+script = ExtResource("1_yw17q")
+Pusher = NodePath("CameraHolder/Camera/Pushinator")
+CameraHolder = NodePath("CameraHolder")
+Camera = NodePath("CameraHolder/Camera")
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerBody" unique_id=990403426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1027832, 0)
+shape = SubResource("CapsuleShape3D_lxh4r")
+
+[node name="PlayerVisual" type="MeshInstance3D" parent="PlayerBody" unique_id=1616479496]
+cast_shadow = 0
+mesh = SubResource("CapsuleMesh_lxh4r")
+
+[node name="CameraHolder" type="Node3D" parent="PlayerBody" unique_id=1481089546]
+
+[node name="Camera" type="Camera3D" parent="PlayerBody/CameraHolder" unique_id=1606827270 node_paths=PackedStringArray("XPivot", "YPivot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47108877, 0)
+script = ExtResource("1_156m4")
+XPivot = NodePath("../..")
+YPivot = NodePath(".")
+
+[node name="Pushinator" parent="PlayerBody/CameraHolder/Camera" unique_id=1541510130 instance=ExtResource("3_l2ya6")]
