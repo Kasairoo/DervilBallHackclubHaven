@@ -20,6 +20,11 @@ func _physics_process(delta: float) -> void:
 	
 	var LookDirectionOffset = -global_basis.z
 	
+	if Global.Player.global_position.distance_squared_to(global_position) < 3 ** 2:
+		
+		Global.AddCommand("TURN BACK!!")
+	
+
 	if LookCast.is_colliding():
 		for i in range(LookCast.get_collision_count()):
 			LookDirectionOffset += LookCast.get_collision_normal(i)

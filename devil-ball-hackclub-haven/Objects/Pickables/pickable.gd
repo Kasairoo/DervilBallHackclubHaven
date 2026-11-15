@@ -2,8 +2,9 @@ extends RigidBody3D
 
 @export var PlayerIdentifier : ShapeCast3D
 
-var DropDelay = 0.0
 
+var DropDelay = 0.0
+	
 func _physics_process(delta: float) -> void:
 	DropDelay -= delta
 	if PlayerIdentifier.is_colliding() and DropDelay < 0.0:
@@ -24,3 +25,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		freeze = false
 		set_collision_layer_value(1, true)
+
+	Global.AddCommand("Nothing to see here!")
