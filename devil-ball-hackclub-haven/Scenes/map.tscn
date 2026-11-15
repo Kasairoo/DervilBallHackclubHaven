@@ -400,7 +400,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.8271171, 0)
 size = Vector3(300, 1, 300)
 
 [node name="Player" parent="." unique_id=1311379251 instance=ExtResource("1_a174x")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1168747, -1.0728836e-06, -0.66098213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.497643, -1.0728836e-06, -5.4900527)
 
 [node name="Road" type="MeshInstance3D" parent="." unique_id=478082433]
 transform = Transform3D(427.4881, 0, 0, 0, 1, 0, 0, 0, 34.993656, 22.543076, -2, 20.86573)

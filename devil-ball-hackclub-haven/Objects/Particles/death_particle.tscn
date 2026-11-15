@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://diiy7k4m8yg4h"]
 
+[ext_resource type="PackedScene" uid="uid://dunuduw6hhivh" path="res://Objects/Balls/ball.tscn" id="1_3e3km"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcvot"]
 albedo_color = Color(0.58431375, 0, 0.050980393, 1)
 
@@ -18,3 +20,5 @@ spread = 180.0
 gravity = Vector3(0, -4.9, 0)
 initial_velocity_min = 3.0
 initial_velocity_max = 5.0
+
+[node name="Ball" parent="." unique_id=312142065 instance=ExtResource("1_3e3km")]

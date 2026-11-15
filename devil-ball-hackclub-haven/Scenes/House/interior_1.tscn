@@ -219,10 +219,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1.5, 0.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 0.5, -9)
 
 [node name="Pickable2" parent="." unique_id=1587305918 instance=ExtResource("3_ocuec")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, -31.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0.5, -29)
 
 [node name="Door" parent="." unique_id=1438692399 instance=ExtResource("1_5ghw7")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.25, 0.95, -18.5)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 7.2, 0.95, -18.5)
 
 [node name="Door2" parent="." unique_id=1617694241 instance=ExtResource("1_5ghw7")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.5, 1, -52.75)
