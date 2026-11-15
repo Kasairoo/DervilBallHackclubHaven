@@ -18,8 +18,8 @@ func _ready():
 
 func _process(delta: float) -> void:
 	
-	XPivot.rotation_degrees.y = XRotation
-	YPivot.rotation_degrees.x = YRotation
+	XPivot.rotation_degrees.y = XRotation + (Global.ScreenShake * randf_range(-1,1) * 3)
+	YPivot.rotation_degrees.x = YRotation + (Global.ScreenShake * randf_range(-1,1) * 2)
 	
 	if Input.is_action_just_pressed("MouseCapture"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
